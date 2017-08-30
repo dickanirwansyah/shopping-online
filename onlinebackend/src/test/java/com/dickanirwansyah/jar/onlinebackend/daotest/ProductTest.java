@@ -27,11 +27,33 @@ public class ProductTest {
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
 
+	
+	/*
+	 * menampilkan product berdasarkan id 1 dan active.
+	 * 
+	@Test
+	public void testGetLatestActiveProduct(){
+		assertEquals("Maaf ada kesalahan dalam proses menampilkan", 
+				1, productDAO.getLatestActiveProduct(1).size());
+	}
+	*/
+	
 	/*
 	@Test
 	public void testJumlahProductYangActive(){
 		assertEquals("Maaf ada kesalahan dalam menampilkan product "
 				+ "yang active",3, productDAO.listActiveProduct().size());
+	}
+	*/
+	
+	/*
+	 * menampilkan product yang aktive berdasarkan kategori, product dengan kategori 1
+	 * yang aktive ada 2.
+	 * 
+	@Test
+	public void testListProductBerdasarkanCategoryYangActive(){
+		assertEquals("maaf ada kesalahan",2, productDAO.listActiveProductByCategory(1).size());
+		
 	}
 	*/
 	

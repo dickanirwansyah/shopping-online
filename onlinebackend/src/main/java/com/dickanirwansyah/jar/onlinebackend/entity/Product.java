@@ -40,10 +40,10 @@ public class Product implements Serializable{
 	@Column(name="active", nullable=false)
 	private boolean active;
 	
-
+	@Column(name="category_id", nullable=false)
 	private int category_id;
 	
-
+	@Column(name="userdetail_id", nullable=false)
 	private int userdetail_id;
 	
 	@Column(name="purchases")
