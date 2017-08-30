@@ -14,7 +14,7 @@ public interface ProductDAO {
 	
 	List<Product> getLatestActiveProduct(int count);
 	
-	Product getIdProduct(int id);
+	Product getIdProduct(int idproduct);
 	
 	boolean saveProduct(Product product);
 	
