@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+<!-- CONTEXT ROOT PAGES -->
 <c:set var="contextRoot" value="${pageContext.request.contextPath}"/> 
   
 <spring:url var="css" value="/resources/css"/>
@@ -16,13 +17,24 @@
 <title>BelanjaBelanja.com - ${title}</title>
 <!-- CUSTOM CSS -->
 <link href="${css }/myapp.css" rel="stylesheet"/>
+
 <!-- BOOTSTRAP CSS -->
 <link href="${css }/bootstrap.min.css" rel="stylesheet"/>
+
 <!-- THEMES TEMPLATE -->
 <link href="${css }/themes-template.css" rel="stylesheet"/>
+
+<!-- DATA TABLES CSS -->
+<link href="${css }/dataTables.bootstrap.css" rel="stylesheet"/>
+
+<link href="${css }/dataTables.bootstrap.min.css" rel="stylesheet"/>
+
 <!-- ACTIVE MENU -->
 <script>
+
 	window.menu = "${title}";
+	
+	window.contextRoot = "${contextRoot}"
 </script>
 </head>
 <body>
@@ -64,10 +76,22 @@
 		
 		<!-- JQUERY -->
 		<script src="${js }/jQuery.js"></script>
+		
+		<!-- JQUERY DATATABLES -->
+		<script src="${js }/jquery.dataTables.js"></script>
+		
+		<!-- DATA TABLES JS -->
+		<script src="${js }/dataTables.bootstrap.js"></script>
+		
+		<script src="${js }/dataTables.bootstrap.min.js"></script>
+		
 		<!-- BOTSTRAP -->
 		<script src="${js }/bootstrap.js"></script>
+		
 		<!-- CUSTOM JS -->
 		<script src="${js }/myapp.js"></script>
+		
+		<!-- BOOTSTRAP MIN JS -->
 		<script src="${js }/bootstrap.min.js"></script>
 	
 </body>

@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "product", catalog = "onlineshopping")
 public class Product implements Serializable{
@@ -28,6 +30,7 @@ public class Product implements Serializable{
 	@Column(name="brand",nullable=false)
 	private String brand;
 	
+	@JsonIgnore
 	@Column(name="description", nullable=false)
 	private String description;
 	
@@ -37,12 +40,15 @@ public class Product implements Serializable{
 	@Column(name="quantity", nullable=false)
 	private int quantity;
 	
+	@JsonIgnore
 	@Column(name="active", nullable=false)
 	private boolean active;
 	
+	@JsonIgnore
 	@Column(name="category_id", nullable=false)
 	private int category_id;
 	
+	@JsonIgnore
 	@Column(name="userdetail_id", nullable=false)
 	private int userdetail_id;
 	
