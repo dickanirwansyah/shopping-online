@@ -29,52 +29,46 @@
 
 <link href="${css }/dataTables.bootstrap.min.css" rel="stylesheet"/>
 
-<!-- ACTIVE MENU -->
-<script>
 
-	window.menu = "${title}";
-	
-	window.contextRoot = "${contextRoot}"
-</script>
 </head>
 <body>
 	<div class="wrapper">
 	
-		<%@include file="./layout/navbar.jsp" %>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		
+			<ul class="navbar navbar-nav">
+			
+				<a href="${contextRoot}/home" class="navbar-brand">BelanjaBelanja.com</a>
+			
+			</ul>
+		
+		</nav>
+		
 		
 		<div class="content">
 		
-		<!-- USER CLICK HOME -->
-		<c:if test="${userClickHome == true }">
-			<%@include file="home.jsp" %>
-		</c:if>
-		<!-- USER CLICK HOME -->	
+			<div class="container">
+			
+				<div class="row">
+				
+					<div class="col-xs-12">
+					
+						<div class="jumbotron">
+						
+							<h1>${description }</h1>
+							<hr/>
+							<blockquote>
+								${titleError}
+							</blockquote>
+						</div>
+					
+					</div>
+				
+				</div>
+			
+			
+			</div>
 		
-		<!-- USER CLICK SINGLE PRODUCT -->
-		<c:if test="${userClickOneProduct == true}">
-			<%@include file="singleproduct.jsp"%>
-		</c:if>
-		<!-- USER CLICK SINGLE PRODUCT -->
-		
-		<!-- USER CLICK ABOUT US -->
-		<c:if test="${userClickAbout ==true }">
-			<%@include file="about.jsp" %>
-		</c:if>
-		<!-- USER CLICK ABOUT US -->
-		
-		<!-- USER CLICK ALL PRODUCT -->
-		<c:if test="${userClickAllProduct == true or userClickCategoryProduct == true}">
-			<%@include file="products.jsp" %>
-		</c:if>
-		<!-- USER CLICK ALL PRODUCT -->
-		
-		
-		
-		<!-- USER CLICK CONTACT US -->
-		<c:if test="${userClickContact ==true }">
-			<%@include file="contact.jsp" %>
-		</c:if>
-		<!-- USER CLICK CONTACT US -->
 		
 		</div>
 	

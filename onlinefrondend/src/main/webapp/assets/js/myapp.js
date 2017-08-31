@@ -69,6 +69,7 @@ $(function (){
 				           },
 				           {
 				        	   data : 'id',
+				        	   bSortable : false,
 				        	   mRender : function(data, type, row){
 				        		   
 				        		   var str = "";
@@ -78,7 +79,7 @@ $(function (){
 				        		   str += '<a href="'+ window.contextRoot +'/show/'+data+'/products" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>Lihat</a>  ';
 				        		   //add to cart
 				                   
-				        		   str += '<a href="'+ window.contextRoot +'/cart/add/'+data+'/products" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span>Beli</a>';
+				        		   str += '<a href="'+ window.contextRoot +'/cart/add/'+data+'/products" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart </a>';
 				        		   return str;
 				        	   }
 				           }

@@ -13,7 +13,7 @@
   ">
   
   <!-- CONTEXT COMPONEN FRONDEND-->
-  <context:component-scan base-package="com.dickanirwansyah.war.onlinefrondend.controller" />
+  <context:component-scan base-package="com.dickanirwansyah.war.onlinefrondend.*" />
   <!-- CONTEXT COMPONEN BACKEND -->
   <context:component-scan base-package="com.dickanirwansyah.jar.onlinebackend" />
  

@@ -18,6 +18,33 @@
   
   <dependencies>
   
+    <!-- EXLUDE COMMONS LOGGING SPRING CORE-->
+  <dependency>
+  	<groupId>org.springframework</groupId>
+  	<artifactId>spring-core</artifactId>
+  	<version>${spring.version}</version>
+  	<exclusions>
+  		<exclusion>
+  			<groupId>commons-logging</groupId>
+  			<artifactId>commons-logging</artifactId>
+  		</exclusion>
+  	</exclusions>
+  </dependency>
+  
+  <!-- SLF4J LOGBACK -->
+  <dependency>
+  	<groupId>ch.qos.logback</groupId>
+  	<artifactId>logback-classic</artifactId>
+  	<version>1.2.1</version>
+  </dependency>
+  
+  <!-- SLF4J LOGBACK -->
+  <dependency>
+  	<groupId>org.slf4j</groupId>
+  	<artifactId>jcl-over-slf4j</artifactId>
+  	<version>1.7.24</version>
+  </dependency>
+  
   <!-- SPRING FRAMEWORK CONTEXT -->
   <dependency>
   	<groupId>org.springframework</groupId>
@@ -32,12 +59,21 @@
   	<version>${spring.version}</version>
   </dependency>
   
-  <!-- SPRING FRAMEWORK JDBC -->
+  
+  <!-- SPRING FRAMEWORK JDBC EXCLUDE COMMONS LOGGING-->
   <dependency>
   	<groupId>org.springframework</groupId>
   	<artifactId>spring-jdbc</artifactId>
   	<version>${spring.version}</version>
+  	<exclusions>
+  		<exclusion>
+  			<groupId>commons-logging</groupId>
+  			<artifactId>commons-logging</artifactId>
+  		</exclusion>
+  	</exclusions>
   </dependency>
+  
+
   
   <!-- HIBERNATE CORE -->
   <dependency>
