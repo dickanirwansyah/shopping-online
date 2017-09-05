@@ -65,7 +65,14 @@ $(function (){
 				        	   }
 				           },
 				           {
-				        	   data : 'quantity'
+				        	   data : 'quantity',
+				        	   mRender:function(data, type, row){
+				        		   
+				        		   if(data < 1){
+				        			   return '<span style="color:red">Out Of Stock !</span>';
+				        		   }
+				        		   	   return data;
+				        	   }
 				           },
 				           {
 				        	   data : 'id',
@@ -78,14 +85,17 @@ $(function (){
 				        		   //show item
 				        		   str += '<a href="'+ window.contextRoot +'/show/'+data+'/products" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>Lihat</a>  ';
 				        		   //add to cart
-				                   
-				        		   str += '<a href="'+ window.contextRoot +'/cart/add/'+data+'/products" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart </a>';
+				        		   
+				        		   //ketika barang kurang dari 0 button cart disable
+				        		   if(row.quantity < 1){
+				        			   str += '<a href="javascript:void(0)" class="btn btn-success disable"><strike><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</strike></a>';
+				        		   }else{
+				        			   str += '<a href="'+ window.contextRoot +'/cart/add/'+data+'/products" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart </a>';  
+				        		   }
 				        		   return str;
 				        	   }
 				           }
-				           
-				           
-				           ]
-			});
+				          ]
+					});
 		}
 });
