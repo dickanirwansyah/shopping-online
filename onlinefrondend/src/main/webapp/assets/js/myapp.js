@@ -13,6 +13,10 @@ $(function (){
 		$('#listProducts').addClass('active');
 	break;
 	
+	case 'Manajemen Product': 
+		$('#manageProduct').addClass('active');
+	break;
+	
 	default :
 		$('#listProducts').addClass('active');
 		$('#a_' + menu).addClass('active');
@@ -97,5 +101,15 @@ $(function (){
 				           }
 				          ]
 					});
+		}
+		
+		
+		//menghilangkan alert message setelah 3 detik
+		var $alert = $('.alert');
+		
+		if($alert.length){
+			setTimeout(function(){
+				$alert.fadeOut('slow');
+			}, 3000)
 		}
 });

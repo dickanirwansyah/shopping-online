@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!-- CONTEXT ROOT PAGES -->
@@ -68,6 +69,11 @@
 		</c:if>
 		<!-- USER CLICK ALL PRODUCT -->
 		
+		<!-- USER CLICK MANAGE PRODUCT -->
+		<c:if test="${userClickManageProduct== true }">
+			<%@include file="ManageProducts.jsp" %>
+		</c:if>
+		<!-- USER CLICK MANAGE PRODUCT -->
 		
 		
 		<!-- USER CLICK CONTACT US -->

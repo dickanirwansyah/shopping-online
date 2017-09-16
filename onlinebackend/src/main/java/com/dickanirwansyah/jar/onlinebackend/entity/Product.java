@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,19 +28,24 @@ public class Product implements Serializable{
 	private String code;
 	
 	@Column(name="name", nullable=false)
+	@NotBlank(message="Please enter the name of product !")
 	private String name;
 	
 	@Column(name="brand",nullable=false)
+	@NotBlank(message="Please enter the brand of product !")
 	private String brand;
 	
 	@JsonIgnore
 	@Column(name="description", nullable=false)
+	@NotBlank(message="Please enter the description of product !")
 	private String description;
 	
 	@Column(name="unitprice", nullable=false)
+	@Min(value=1, message="price Product cannot be zero !")
 	private double unitprice;
 	
 	@Column(name="quantity", nullable=false)
+	@Min(value=1, message="Quantity Product cannot be less than one !")
 	private int quantity;
 	
 	@JsonIgnore
@@ -160,6 +168,16 @@ public class Product implements Serializable{
 
 	public void setViews(int views) {
 		this.views = views;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name
+				+ ", brand=" + brand + ", description=" + description
+				+ ", unitprice=" + unitprice + ", quantity=" + quantity
+				+ ", active=" + active + ", category_id=" + category_id
+				+ ", userdetail_id=" + userdetail_id + ", purchases="
+				+ purchases + ", views=" + views + "]";
 	}
 	
 	

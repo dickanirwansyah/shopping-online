@@ -104,6 +104,20 @@
  		<version>5.1.10</version>
  	</dependency>
  	
+ <!-- HIBERNATE VALIDATOR -->
+ 	<dependency>
+ 		<groupId>javax.validation</groupId>
+ 		<artifactId>validation-api</artifactId>
+ 		<version>1.1.0.Final</version>
+ 	</dependency>	
+ 	
+ <!-- HIBERNATE VALIDATOR -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.4.1.Final</version>
+	</dependency>	
+ 	
  <!-- FASTER XML JSON FORMAT -->	
  	<dependency>
  		<groupId>com.fasterxml.jackson.core</groupId>
