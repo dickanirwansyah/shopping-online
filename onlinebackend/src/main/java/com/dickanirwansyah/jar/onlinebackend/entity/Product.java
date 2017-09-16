@@ -9,9 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -66,6 +68,21 @@ public class Product implements Serializable{
 	@Column(name="views")
 	private int views;
 
+	
+	//multipart file upload
+	@Transient
+	private MultipartFile file;
+	
+	//multipart file upload
+	public MultipartFile getFile(){
+		return file;
+	}
+	
+	//multipart file upload
+	public void setFile(MultipartFile file){
+		this.file=file;
+	}
+	
 	
 	public Product(){
 		this.code = "PRD" + UUID.randomUUID()

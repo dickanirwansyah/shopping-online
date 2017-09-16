@@ -31,7 +31,8 @@
 	     					<!-- FORM ELEMET MANAJEMEN PRODUCT -->
 	     					
 	     					<springform:form class="form-horizontal" modelAttribute="product" 
-	     					action="${contextRoot}/manage/products" method="POST">
+	     					action="${contextRoot}/manage/products" method="POST" 
+	     					enctype="multipart/form-data">
 	     					
 	     						<div class="form-group">
 	     						
@@ -89,10 +90,17 @@
 	     								<springform:input type="number" class="form-control" path="quantity" id="quantity" placeholder="Quantity Of Product"/>
 	     								<!-- VALIDASI -->
 	     								<springform:errors path="quantity" cssClass="help-block" element="em"/>
-	     								
 	     							</div>
-	     						
 	     						</div>
+	     						
+	     						<!-- FILE ELEMEN FOR IMAGE UPLOAD -->
+	     						<div class="form-group">
+	     							<label class="col-lg-3 control-label" for="file">Select Image :</label>
+	     							<div class="col-md-8">
+	     								<springform:input type="file" class="form-control" path="file" id="file"/>
+	     							</div>
+	     						</div>
+	     						<!-- FILE ELEMEN FOR IMAGE UPLOAD -->
 	     						
 	     						<div class="form-group">
 	     						

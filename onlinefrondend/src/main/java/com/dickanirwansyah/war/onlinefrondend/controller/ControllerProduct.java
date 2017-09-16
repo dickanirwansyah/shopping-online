@@ -2,6 +2,7 @@ package com.dickanirwansyah.war.onlinefrondend.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import com.dickanirwansyah.jar.onlinebackend.dao.CategoryDAO;
 import com.dickanirwansyah.jar.onlinebackend.dao.ProductDAO;
 import com.dickanirwansyah.jar.onlinebackend.entity.Category;
 import com.dickanirwansyah.jar.onlinebackend.entity.Product;
+import com.dickanirwansyah.war.onlinefrondend.configure.ConfigurerFileUpload;
 
 
 @Controller
@@ -65,7 +67,7 @@ public class ControllerProduct {
 	//handling product submit
 	@RequestMapping(value="/products", method=RequestMethod.POST)
 	public String getSubmitProduct(@Valid @ModelAttribute("product")Product product, 
-			BindingResult bindresult, Model model){
+			BindingResult bindresult, Model model, HttpServletRequest request){
 		
 		//check binding result validation errors
 		if(bindresult.hasErrors()){
@@ -78,6 +80,12 @@ public class ControllerProduct {
 		LOGGER.info(product.toString());
 		
 		productDAO.saveProduct(product);
+		
+		
+		//check multipart file upload
+		if(!product.getFile().getOriginalFilename().equals("")){
+			ConfigurerFileUpload.uploadFile(request, product.getFile(), product.getCode());
+		}
 		
 		return "redirect:/manage/products?operation=product";
 	}
